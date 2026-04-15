@@ -5,19 +5,18 @@ import { useNavigate } from "react-router";
 
 // 🎨 COLOR CONFIGURATION - Strictly matching VoiceAssistant
 const COLORS = {
-  primary: "#8B5CF6", 
-  secondary: "#865bbf", 
-  accent: "#db5db6", 
-  highlight: "#7826dc", 
-  background: "#000000", 
+  primary: "#8B5CF6",
+  secondary: "#865bbf",
+  accent: "#db5db6",
+  highlight: "#7826dc",
+  background: "#000000",
 };
 
 // 🎙️ VOICES ARRAY - Easily manually editable
 const VOICES = [
-  { name: "Lalita", description: "Calm, Exciting" },
-  { name: "Aditi", description: "Soft, Warm" },
-  { name: "Rohan", description: "Deep, Authoritative" },
-  { name: "Kavya", description: "Energetic, Fast" },
+  { name: "Sarah", id: "af_sarah", description: "Soft, Warm" },
+  { name: "Jessica", id: "af_jessica", description: "Excited, Happy" },
+  { name: "Adam", id: "af_adam", description: "Deeper, but Normal" },
 ];
 
 export default function Selectvoice() {
@@ -25,7 +24,7 @@ export default function Selectvoice() {
   const canvasRef = useRef(null);
   const animationRef = useRef();
   const blobsRef = useRef([]);
-  const currentCircleRadiusRef = useRef(120); 
+  const currentCircleRadiusRef = useRef(120);
   const navigate = useNavigate();
 
   const currentVoice = VOICES[currentIndex];
@@ -39,7 +38,7 @@ export default function Selectvoice() {
   };
 
   const handleChooseVoice = () => {
-    localStorage.setItem("voice_name", currentVoice.name);
+    localStorage.setItem("voice_name", currentVoice.id);
     navigate("/main");
   };
 
@@ -249,7 +248,7 @@ export default function Selectvoice() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-black text-white p-6 select-none overflow-hidden">
       {/* 🔮 THE VOICE BALL - Strictly matches idle state */}
-      <div className="relative mb-16 transform transition-all duration-500">
+      <div className="relative  transform transition-all duration-500">
         <canvas
           ref={canvasRef}
           width={400}
@@ -259,29 +258,29 @@ export default function Selectvoice() {
       </div>
 
       {/* 🗣️ VOICE SELECTION INTERFACE */}
-      <div className="flex flex-col items-center gap-3 mb-16 w-full max-w-sm">
+      <div className="flex flex-col items-center gap-3 mb-10 w-full max-w-sm">
         <div className="flex items-center justify-between w-full px-4">
-          <button 
-            onClick={handlePrev} 
-            className="p-2 text-white hover:text-purple-400 transition-all duration-300 transform active:scale-90"
+          <button
+            onClick={handlePrev}
+            className="p-4 text-white hover:text-purple-400 transition-all duration-300 transform active:scale-90"
             aria-label="Previous voice"
           >
             <ChevronLeft size={36} strokeWidth={1.5} />
           </button>
-          
+
           <h2 className="text-4xl font-light tracking-[0.05em] text-white animate-in fade-in slide-in-from-bottom-2 duration-700">
             {currentVoice.name}
           </h2>
 
-          <button 
-            onClick={handleNext} 
+          <button
+            onClick={handleNext}
             className="p-2 text-white hover:text-purple-400 transition-all duration-300 transform active:scale-90"
             aria-label="Next voice"
           >
             <ChevronRight size={36} strokeWidth={1.5} />
           </button>
         </div>
-        
+
         <p className="text-slate-400 text-base font-light tracking-wide opacity-80 h-6">
           {currentVoice.description}
         </p>
@@ -290,7 +289,7 @@ export default function Selectvoice() {
       {/* 🔘 CHOOSE VOICE BUTTON */}
       <button
         onClick={handleChooseVoice}
-        className="px-14 py-5 bg-white text-black text-2xl font-semibold rounded-full hover:bg-slate-200 hover:scale-105 active:scale-95 transition-all duration-300 shadow-[0_10px_40px_rgba(255,255,255,0.15)] ring-offset-black hover:ring-2 hover:ring-white/20"
+        className="px-8 py-2 bg-white text-black text-xl font-semibold rounded-full hover:bg-slate-200 hover:scale-105 active:scale-95 transition-all duration-300 shadow-[0_10px_40px_rgba(255,255,255,0.15)] ring-offset-black hover:ring-2 hover:ring-white/20"
       >
         Choose voice
       </button>

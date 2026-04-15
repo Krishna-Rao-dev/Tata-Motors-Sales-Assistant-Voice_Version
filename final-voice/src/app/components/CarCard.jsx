@@ -14,14 +14,14 @@
 // }
 
 import { useState, useEffect } from "react";
-import img from '../assets/img.png';
+import img from './assets/img.png';
 const CAR_MODELS = {
-  "nexon":   "https://sketchfab.com/3d-models/tata-nexon-2016-9596da3c9e794fa38e268a7dfcfca559/embed?autostart=1&camera=0&preload=1",
-  "tiago":   "https://sketchfab.com/3d-models/tata-tiago-2021-67de69f0cd934a649887af4b162c9fb2/embed?autostart=1&camera=0&preload=1",
-  "altroz":  "https://sketchfab.com/3d-models/tata-altroz-2020-2cf48db681d04cd7867e57d2f1db8bbc/embed?autostart=1&camera=0&preload=1",
+  "nexon": "https://sketchfab.com/3d-models/tata-nexon-2016-9596da3c9e794fa38e268a7dfcfca559/embed?autostart=1&camera=0&preload=1",
+  "tiago": "https://sketchfab.com/3d-models/tata-tiago-2021-67de69f0cd934a649887af4b162c9fb2/embed?autostart=1&camera=0&preload=1",
+  "altroz": "https://sketchfab.com/3d-models/tata-altroz-2020-2cf48db681d04cd7867e57d2f1db8bbc/embed?autostart=1&camera=0&preload=1",
   "harrier": "https://sketchfab.com/3d-models/3-d-model-of-tata-harrier-car-5955db3b145540b3baf4eddaf586ccef/embed?autostart=1&camera=0&preload=1",
-  "punch":   "https://sketchfab.com/3d-models/tata-punch-c077007494774beaa6e74fac447aa035/embed?autostart=1&camera=0&preload=1",
-  "safari":  "https://sketchfab.com/3d-models/2021-tata-safari-3051714dba91468f9d3f4f15305c2541/embed?autostart=1&camera=0&preload=1",
+  "punch": "https://sketchfab.com/3d-models/tata-punch-c077007494774beaa6e74fac447aa035/embed?autostart=1&camera=0&preload=1",
+  "safari": "https://sketchfab.com/3d-models/2021-tata-safari-3051714dba91468f9d3f4f15305c2541/embed?autostart=1&camera=0&preload=1",
 };
 
 // normalize "Tata Nexon" → "tata nexon"
@@ -56,7 +56,7 @@ const ViewerModal = ({ model, url, onClose }) => {
           </div>
           <button className="modal-close" onClick={onClose} aria-label="Close">
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-              <path d="M2 2L16 16M16 2L2 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+              <path d="M2 2L16 16M16 2L2 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
             </svg>
           </button>
         </div>
@@ -80,7 +80,7 @@ const ViewerModal = ({ model, url, onClose }) => {
         <div className="modal-footer">
           <span>Drag to rotate · Scroll to zoom · Right-click to pan</span>
           <a href={url.replace("/embed?autostart=1&camera=0&preload=1", "")}
-             target="_blank" rel="noopener noreferrer" className="modal-sketchfab-link">
+            target="_blank" rel="noopener noreferrer" className="modal-sketchfab-link">
             View on Sketchfab ↗
           </a>
         </div>
@@ -106,7 +106,7 @@ const CarCard = ({ model = "nexon" }) => {
             <span>{url ? "View 3D Model" : "Model unavailable"}</span>
             {url && (
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <path d="M2 7H12M8 3L12 7L8 11" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M2 7H12M8 3L12 7L8 11" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             )}
           </button>
@@ -114,7 +114,7 @@ const CarCard = ({ model = "nexon" }) => {
 
         {/* right car icon */}
         <div className="card-visual">
-            <img src={img} width={180} alt="" />
+          <img src={img} width={180} alt="" />
         </div>
 
         {/* corner accent */}

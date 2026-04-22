@@ -66,9 +66,11 @@ This project demonstrates that the future of UI is not just "Voice" or "Web," bu
 
 
 Here are some snapshots of the application:
-<img width="1916" height="1016" alt="Screenshot 2026-04-19 224308" src="https://github.com/user-attachments/assets/4d77030c-bbe8-42d4-8576-b9387bbae6b7" />
-<br/>
 <img width="1300" height="920" alt="image" src="https://github.com/user-attachments/assets/07160026-1539-4d16-89f3-43c003ee338d" />
+<br/>
+<img width="1916" height="1016" alt="Screenshot 2026-04-19 224308" src="https://github.com/user-attachments/assets/4d77030c-bbe8-42d4-8576-b9387bbae6b7" />
+
+
 
 <br/>
 ---
